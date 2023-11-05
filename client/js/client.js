@@ -1,4 +1,4 @@
-const socket = io('https://chat-application-backend-chi.vercel.app', {transports:["websocket"]});
+const socket = io('http://localhost:5000', {transports:["websocket"]});
 
 const form = document.getElementById('send-container');
 const messageInput = document.getElementById('messageInp');
