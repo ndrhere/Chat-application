@@ -5,7 +5,7 @@ const cors = require('cors')
 
 const app = express();
 const corsOptions = {
-    origin: 'https://chat-application-client-dun.vercel.app',
+    origin: 'http://localhost:5500',
     methods: 'GET, POST',
     credentials: true
    }
