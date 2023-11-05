@@ -1,4 +1,4 @@
-const io = require('socket.io')(5000);
+const io = require('socket.io')('https://chat-application-one-green.vercel.app');
 
 
 const users = {};
