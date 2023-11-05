@@ -5,7 +5,7 @@
     height: 70vh;
     padding: 10px;
     overflow-y: auto;
-    background-image: url('/whatsapp.jpg');
+    background-image: url('/client/whatsapp.jpg');
     background-size: cover; 
     }
 
