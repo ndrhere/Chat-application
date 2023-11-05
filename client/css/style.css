@@ -1,0 +1,104 @@
+.container {
+    margin: auto;
+    border: 2px solid black;
+    max-width: 1000px;
+    height: 70vh;
+    padding: 10px;
+    overflow-y: auto;
+    background-image: url('/whatsapp.jpg');
+    background-size: cover; 
+    }
+
+.main-container{
+  border-radius: 19px;
+  margin-top: -15px;
+}
+
+  .name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar {
+    text-align: center;
+  }
+  body{
+    background-color:#39938e;
+    height: 100vh;
+  }
+  
+  .message {
+    background-color: grey;
+    width: 25%;
+    padding: 20px;
+    margin: 25px;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+  
+.bold{
+  font-weight: bold;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.form-control{
+  max-width: 30%;
+}
+
+  .left{
+  float: left;
+  clear: both;
+  background-color: white;
+  padding: 15px;
+  
+  }
+  
+  .right{
+  float: right;
+  clear: both;
+  background-color: white;
+  padding:15px;
+  
+  }
+  
+  .send{
+    text-align: center;
+    max-width: 1030px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    
+  }
+  
+  #messageInp{
+    width: 90%;
+    padding: 9px;
+    border: 2px solid white;
+    border-radius: 10px;
+    
+  }
+  
+  .btn{
+   border: 2px solid rgb(70, 70, 110);
+    }
+
+    @media screen and (max-width: 450px){
+      #btn-submit{
+       margin-top: 14px;
+      }
+      #btn-name{
+      
+      }
+    }
+
+    .time{
+      font-size: 14px;
+      color: #888;
+      margin-left: 5px;
+      display: block;
+      
+    }
