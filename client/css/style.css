@@ -90,9 +90,14 @@
       #btn-submit{
        margin-top: 14px;
       }
-     .form-control{
-      max-width: 38%;
-}
+     
+    }
+@media screen and (min-width: 280px ) and (max-width: 450px){
+      .form-control{
+        max-width: 40%;
+      }
+      
+     
     }
 
     .time{
