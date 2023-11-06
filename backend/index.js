@@ -1,44 +1,39 @@
 const express = require('express');
 const http = require('http');
-const socketIo = require('socket.io')
-const cors = require('cors')
+const socketIo = require('socket.io');
+const cors = require('cors');
 
 const app = express();
 const corsOptions = {
-    origin: '',
+    origin: 'http://localhost:5500',
     methods: 'GET, POST',
     credentials: true
    }
-app.use(cors(corsOptions));
+app.use(cors(corsOptions)); // Enable CORS for all routes
 
-const server = http.createServer(app)
-const io = socketIo(server)
+const server = http.createServer(app);
+const io = socketIo(server);
 
 const users = {};
 
- io.on('connection', (socket) => {
+io.on('connection', (socket) => {
   socket.on('new-user-joined', (userName) => {
-  console.log("New user", userName)
-  users[socket.id] = userName;
-  socket.broadcast.emit('user-joined', userName);
-  //broadcast is used to broadcast all the other users except the current user about the event which has happened
+    console.log("New user", userName);
+    users[socket.id] = userName;
+    socket.broadcast.emit('user-joined', userName);
   });
 
   socket.on('send', (message) => {
-  socket.broadcast.emit('receive', {message: message, userName: users[socket.id]})
+    socket.broadcast.emit('receive', { message: message, userName: users[socket.id] });
   });
 
-  socket.on('disconnect', (message) => {
-  socket.broadcast.emit('left', users[socket.id])
-  delete users[socket.id]
-  })
+  socket.on('disconnect', () => {
+    socket.broadcast.emit('left', users[socket.id]);
+    delete users[socket.id];
+  });
+});
 
-
- })
- //io.on will handle all the chat connections in general where all the users will join 
- //socket.on is to handle the individual connection or a user which will join
-
- const PORT = process.env.PORT || 5000;
-  server.listen(PORT, () => {
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
   console.log(`Socket.IO server is running on port ${PORT}`);
 });
