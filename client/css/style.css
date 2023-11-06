@@ -90,9 +90,9 @@
       #btn-submit{
        margin-top: 14px;
       }
-      #btn-name{
-      
-      }
+     .form-control{
+      max-width: 38%;
+}
     }
 
     .time{
