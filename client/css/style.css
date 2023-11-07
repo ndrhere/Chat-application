@@ -96,7 +96,9 @@
       .form-control{
         max-width: 40%;
       }
-      
+      .message{
+          width: 31%;
+      }
      
     }
 
